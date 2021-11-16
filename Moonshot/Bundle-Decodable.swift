@@ -25,7 +25,7 @@ extension Bundle {
         // Format the date so that it doesn't show up like "y-MM-dd"
         let formatter = DateFormatter()
         formatter.dateFormat = "y-MM-dd"
-        // Says that any date
+        // Says that any date in the decoded should conform to this date format
         decoder.dateDecodingStrategy = .formatted(formatter)
         
         guard let loaded = try? decoder.decode(T.self, from: data) else {
